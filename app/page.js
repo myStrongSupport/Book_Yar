@@ -1,9 +1,11 @@
 import Hero from "@/components/Home/Hero/Hero";
 import BookState from "@/components/BookState/BookState";
-import { getBooks } from "./actions/requestes";
 
 export default async function Home() {
-  const readingBooks = await getBooks();
+  const data = await fetch(
+    "https://book-yar-shar.vercel.app/api/booksBeingRead"
+  );
+  const readingBooks = await data.json();
   return (
     <>
       <section className="md:h-[87dvh]">
