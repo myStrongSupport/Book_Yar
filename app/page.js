@@ -1,7 +1,7 @@
 import Hero from "@/components/Home/Hero/Hero";
 import BookState from "@/components/BookState/BookState";
 async function getBooks() {
-  const res = await fetch(`http://localhost:3001/api/booksBeingRead`, {
+  const res = await fetch(`/api/booksBeingRead`, {
     cache: "no-store",
   });
 
