@@ -1,7 +1,7 @@
 import Hero from "@/components/Home/Hero/Hero";
 import BookState from "@/components/BookState/BookState";
 async function getBooks() {
-  const res = await fetch(`/api/booksBeingRead`, {
+  const res = await fetch(`${process.env.VERCEL_URL}/api/booksBeingRead`, {
     cache: "no-store",
   });
 
