@@ -22,7 +22,7 @@ const BookShelfPage = async () => {
           src={shelfImage}
           alt="shelf"
           priority
-          className="absolute bottom-0 z-0 hidden w-full translate-y-[81%] sm:block md:translate-y-[51%]"
+          className="absolute bottom-0 z-0 hidden w-full translate-y-[81%] sm:block md:translate-y-[44%]"
         />
       </div>
     </section>

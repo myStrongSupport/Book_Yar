@@ -19,7 +19,7 @@ const BookIsRead = async () => {
           src={shelfImage}
           alt="shelf is"
           priority
-          className="absolute bottom-0 z-0 hidden w-full translate-y-[76%] sm:block md:translate-y-[46%]"
+          className="absolute bottom-0 z-0 hidden w-full translate-y-[76%] sm:block md:translate-y-[41%]"
         />
       </div>
     </section>

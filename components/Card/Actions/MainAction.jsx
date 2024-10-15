@@ -35,6 +35,8 @@ const MainAction = ({ book }) => {
     } finally {
       setLoading(false);
     }
+    router.push("/bookshelf");
+    router.refresh();
   };
 
   const addToFavoriteShelf = async () => {
@@ -59,6 +61,8 @@ const MainAction = ({ book }) => {
     } finally {
       setLoadingFav(false);
     }
+    router.push("/bookshelf");
+    router.refresh();
   };
 
   return (
