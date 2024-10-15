@@ -1,21 +1,9 @@
 import Hero from "@/components/Home/Hero/Hero";
 import BookState from "@/components/BookState/BookState";
-async function getBooks() {
-  const res = await fetch(`/api/booksBeingRead`, {
-    cache: "no-store",
-  });
+import { getBooks } from "./actions/requestes";
 
-  // Check if response is not OK
-  if (!res.ok) {
-    return []; // Return empty array or any fallback value
-  }
-
-  // Parse JSON if response is OK
-  return await res.json();
-}
 export default async function Home() {
   const readingBooks = await getBooks();
-  console.log(readingBooks);
   return (
     <>
       <section className="md:h-[87dvh]">
@@ -26,7 +14,7 @@ export default async function Home() {
       {/* Book is being Read */}
       <section className="overflow-hidden py-10">
         <div className="m-auto px-1 xl:container">
-          {/* <BookState state="کتاب های درحال مطالعه" books={readingBooks} /> */}
+          <BookState state="کتاب های درحال مطالعه" books={readingBooks} />
         </div>
       </section>
     </>
