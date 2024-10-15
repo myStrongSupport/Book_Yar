@@ -44,7 +44,7 @@ const PinBoard = ({ books }) => {
     <div className="flex justify-center w-full flex-col border-2 md:flex-row">
       {/* Box1 */}
       <Progress percentage={percentage} />
-      <div className="flex flex-wrap gap-5 pr-8">
+      <div className="flex flex-wrap gap-5 sm:pr-8 pr-0">
         {bookList.map((book) => (
           <PinCard book={book} key={book._id} updatedBooks={updatedBooks} />
         ))}
