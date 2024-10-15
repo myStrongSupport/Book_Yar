@@ -48,7 +48,7 @@ const Hero = () => {
         src={shelfImg}
         priority
         alt="my shelf image is amazing lab lab lab"
-        className="absolute bottom-0 z-0 hidden w-full translate-y-[76%] sm:block md:translate-y-[49%]"
+        className="absolute bottom-0 z-0 hidden w-full translate-y-[76%] sm:block md:translate-y-[47%]"
       />
     </div>
   );

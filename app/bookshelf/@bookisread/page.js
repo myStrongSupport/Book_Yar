@@ -5,7 +5,9 @@ import Image from "next/image";
 import { Suspense } from "react";
 
 const BookIsRead = async () => {
-  const data = await fetch("https://book-yar-shar.vercel.app/api/readBooks");
+  const data = await fetch("https://book-yar-shar.vercel.app/api/readBooks", {
+    cache: "no-store",
+  });
   const books = await data.json();
   return (
     <section className="h-[43dvh]">

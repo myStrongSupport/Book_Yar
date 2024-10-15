@@ -4,20 +4,19 @@ import Image from "next/image";
 import { Suspense } from "react";
 import Loading from "@/components/Loading/loading";
 
-const Books = async () => {
+const BookShelfPage = async () => {
   const data = await fetch(
-    "https://book-yar-shar.vercel.app/api/booksBeingRead"
+    "https://book-yar-shar.vercel.app/api/booksBeingRead",
+    {
+      cache: "no-store",
+    }
   );
   const books = await data.json();
-  return <BookState state="قفسه من" books={books} />;
-};
-
-const BookShelfPage = ({ params }) => {
   return (
     <section className="h-[42dvh]">
       <div className="relative h-full px-8 xl:container md:pt-24">
         <Suspense fallback={<Loading />}>
-          <Books />
+          <BookState state="قفسه من" books={books} />;
         </Suspense>
         <Image
           src={shelfImage}

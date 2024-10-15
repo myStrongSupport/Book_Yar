@@ -3,11 +3,22 @@ import ChallangeList from "@/components/Challange/ChallangeList/ChallangeList";
 import { Suspense } from "react";
 
 const Challange = async () => {
-  // Library Books
-  const data = await fetch("https://book-yar-shar.vercel.app/api");
-  const libraryBooks = await data.json();
+  const data = await fetch("https://book-yar-shar.vercel.app/api", {
+    cache: "no-store",
+  });
 
-  return <ChallangeList libraryBooks={libraryBooks} />;
+  const dataChallange = await fetch(
+    `https://book-yar-shar.vercel.app/api/booksChallange`,
+    {
+      cache: "no-store",
+    }
+  );
+  const libraryBooks = await data.json();
+  const challangeBooks = await dataChallange.json();
+
+  return (
+    <ChallangeList books={challangeBooks} libraryBooks={libraryBooks || []} />
+  );
 };
 
 const AddChallangePage = () => {
