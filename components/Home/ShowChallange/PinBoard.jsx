@@ -10,15 +10,12 @@ const PinBoard = ({ books }) => {
   // Get Percentage
   const calculatePercentage = useCallback(() => {
     const readBooks = bookList.filter(
-      (book) => book.isRead && book.isInChallange,
+      (book) => book.isRead && book.isInChallange
     );
 
-    console.log(readBooks);
-
     const totalChallengeBooks = bookList.filter(
-      (book) => book.isInChallange,
+      (book) => book.isInChallange
     ).length;
-    console.log(totalChallengeBooks);
     const progressPercentage =
       totalChallengeBooks > 0
         ? (readBooks.length / totalChallengeBooks) * 100
@@ -37,15 +34,14 @@ const PinBoard = ({ books }) => {
   }, []);
 
   const updatedBooks = useCallback((updatedBook) => {
-    console.log(updatedBook);
     setBookList((prevBooks) =>
       prevBooks.map((book) =>
-        book._id === updatedBook._id ? updatedBook : book,
-      ),
+        book._id === updatedBook._id ? updatedBook : book
+      )
     );
   }, []);
   return (
-    <div className="flex w-full flex-col border-2 md:flex-row">
+    <div className="flex justify-center w-full flex-col border-2 md:flex-row">
       {/* Box1 */}
       <Progress percentage={percentage} />
       <div className="flex flex-wrap gap-5 pr-8">
