@@ -3,11 +3,11 @@ import Link from "next/link";
 const Progress = ({ percentage }) => {
   return (
     <div className="m-auto mb-10 flex flex-col md:m-0 md:mb-0 sm:flex-row">
-      <h2 className="sm:vertical-text sm:ml-4 sm:py-0 py-5 text-center font-bold">
+      <h2 className="sm:vertical-text sm:ml-4 sm:my-0 my-10 text-center font-bold">
         چالش کتابخوانی ماهانه
       </h2>
       {/* Show Progress Bar */}
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center mb-8 sm:mb-0">
         <ProgressBar percentage={percentage} circleWidth="200" />
         <Link
           href="challange"

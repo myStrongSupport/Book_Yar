@@ -18,7 +18,7 @@ const MobileNavbarMenu = () => {
       {/* Menu Mobile */}
       {openMenu && (
         <nav
-          className={`fixed left-0 top-0 !z-[51] !h-screen w-full bg-primary-70 p-5 backdrop-blur-sm md:hidden`}
+          className={`fixed left-0 top-0 !z-[51] !h-screen w-full bg-[#ddceb8a3] p-5 backdrop-blur-sm md:hidden`}
         >
           <div className="mb-20 text-4xl text-primary-400">
             <MdLocalLibrary />
@@ -53,7 +53,7 @@ const MobileNavbarMenu = () => {
         onClick={openMenuHandler}
         className={`${
           openMenu ? "open" : ""
-        } hamburger relative z-[51] h-[24px] w-[24px] focus:outline-none md:hidden`}
+        } hamburger relative z-[51] h-[24px] w-[24px] bg-transparent focus:outline-none md:hidden`}
       >
         <span className="hamburger-top"></span>
         <span className="hamburger-middle"></span>

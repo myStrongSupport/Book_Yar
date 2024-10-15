@@ -19,7 +19,7 @@ const PinCard = ({ book, updatedBooks }) => {
         }),
       });
       if (!response.ok) {
-        console.log("EveryThing is dummy");
+        console.log("could not updating pinboard");
       } else {
         const updatedBook = await response.json();
         updatedBooks(updatedBook.data);
@@ -43,7 +43,7 @@ const PinCard = ({ book, updatedBooks }) => {
         }),
       });
       if (!response.ok) {
-        console.log("EveryThing is dummy");
+        console.log("Could not updating , pinboard");
       } else {
         const updatedBook = await response.json();
         updatedBooks(updatedBook.data);
@@ -53,7 +53,7 @@ const PinCard = ({ book, updatedBooks }) => {
     }
   };
   return (
-    <div className="relative h-[140px] min-w-[180px] select-none rounded-3xl bg-primary-200 p-5 shadow-2xl">
+    <div className="relative h-[140px] md:min-w-[180px] w-full select-none rounded-3xl bg-primary-200 p-5 shadow-2xl">
       <h3 className="font-bold">{book.title}</h3>
       <p className="text-sm">{book.author}</p>
       <div className="absolute bottom-3 left-3 cursor-pointer">

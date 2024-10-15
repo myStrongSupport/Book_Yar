@@ -4,7 +4,7 @@ const ProgressBar = ({ percentage, circleWidth }) => {
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;
   return (
-    <div className="mr-5 scale-125 pb-5">
+    <div className="mr-5 sm:scale-125 translate-x-3 sm:translate-x-0 tr pb-5">
       <svg
         width={circleWidth}
         height={circleWidth}
