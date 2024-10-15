@@ -37,7 +37,7 @@ const ChallangeAction = ({ book }) => {
   return (
     <div className="-mr-10 mt-5">
       <button
-        className="btn bg-blue-500"
+        className="btn bg-blue-100"
         onClick={addToChallangeBookHandler}
         disabled={loading}
       >
