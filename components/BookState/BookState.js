@@ -7,12 +7,7 @@ const BookState = ({ state, books, page = null }) => {
       <h2 className="md:vertical-text py-8 text-lg font-bold md:ml-8 md:mr-10 md:py-0 md:text-left">
         {state}
       </h2>
-      <BookSlider
-        books={books}
-        className="bookShelfSwiper"
-        page={page}
-        domain={domain}
-      />
+      <BookSlider books={books} className="bookShelfSwiper" page={page} />
     </div>
   );
 };
