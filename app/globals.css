@@ -7,21 +7,154 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-iransans);
+  direction: rtl;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /*  */
+  .font-ir {
+    font-family: var(--font-iransans);
   }
+  .font-ir-bold {
+    font-family: var(--font-iransans-bold);
+  }
+  .font-ka {
+    font-family: var(--font-kalameh);
+  }
+  .font-khodkar {
+    font-family: var(--font-khodkar);
+  }
+
+  .bg-full {
+    background-size: 100% 100%;
+  }
+  .line-dots {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .circle-progress {
+    fill: none;
+    /* stroke: var(--theme1); */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dashoffset 0.5s ease-out;
+  }
+}
+
+@layer components {
+  .vertical-text {
+    writing-mode: vertical-rl;
+    -webkit-text-orientation: mixed;
+    text-orientation: mixed;
+    transform: rotate(0);
+  }
+  .shadow-card {
+    box-shadow: -56px 39px 65px -40px rgba(0, 0, 0, 0.75);
+  }
+  .shadow-book {
+    box-shadow: -20px 9px 20px -12px rgba(0, 0, 0, 0.45) !important;
+  }
+  .btn {
+    @apply flex items-center rounded-md bg-primary-70 px-8;
+  }
+  .form-input {
+    @apply relative flex items-center rounded-[.5rem] bg-white px-3 py-1;
+  }
+}
+
+.nav-btn {
+  @apply ml-2 flex items-center rounded-full px-5 py-2 text-lg;
+}
+
+/* Hamburger menu */
+.hamburger {
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  position: fixed;
+  top: 30px;
+  left: 20px;
+}
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(8px) translateX(8px);
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(8px) translateX(-8px);
+}
+
+.mySwiper {
+  padding-bottom: 50px !important;
+}
+
+.bookShelfSwiper {
+  padding-bottom: 70px !important;
+}
+
+/* animation */
+.add {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+.add svg {
+  animation: bump 0.5s forwards ease infinite;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
