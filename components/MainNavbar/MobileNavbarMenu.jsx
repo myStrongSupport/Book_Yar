@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoLibraryOutline } from "react-icons/io5";
 import { TbPointerSearch } from "react-icons/tb";
 import { MdLocalLibrary } from "react-icons/md";
@@ -13,6 +13,10 @@ const MobileNavbarMenu = () => {
   const openMenuHandler = () => {
     setOpenMeun((prev) => !prev);
   };
+
+  useEffect(() => {
+    setOpenMeun(false);
+  }, [path]);
   return (
     <>
       {/* Menu Mobile */}
