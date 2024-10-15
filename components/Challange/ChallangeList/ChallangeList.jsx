@@ -4,17 +4,33 @@ import ChallangeListDefault from "./ChallangeListDefault";
 import ChallangeListLibrary from "./ChallangeListLibrary";
 import { FaArrowRight } from "react-icons/fa";
 
-const ChallangeList = ({ books, libraryBooks, domain }) => {
+const ChallangeList = ({ libraryBooks }) => {
   const [defaultLib, setDefaultLib] = useState(true);
+  const [challangeBooks, setChallangeBooks] = useState([]);
 
   useEffect(() => {
     setDefaultLib(true);
   }, [books]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch("https://book-yar-shar.vercel.app/api");
+      if (!data.ok) {
+        throw new Error("Failed to fetch the book challange");
+      }
+      const books = await data.json();
+      setChallangeBooks(books);
+    };
+    fetchData();
+  }, [challangeBooks, defaultLib]);
+
   return (
     <div className="relative w-full pt-16 md:w-1/2">
       {defaultLib ? (
-        <ChallangeListDefault books={books} setDefaultLib={setDefaultLib} />
+        <ChallangeListDefault
+          books={challangeBooks}
+          setDefaultLib={setDefaultLib}
+        />
       ) : (
         <>
           <FaArrowRight

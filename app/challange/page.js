@@ -6,13 +6,8 @@ const Challange = async () => {
   // Library Books
   const data = await fetch("https://book-yar-shar.vercel.app/api");
   const libraryBooks = await data.json();
-  // Challange Books
-  const dataChallage = await fetch(
-    "https://book-yar-shar.vercel.app/booksChallange"
-  );
-  const challangeBooks = await dataChallage.json();
 
-  return <ChallangeList books={challangeBooks} libraryBooks={libraryBooks} />;
+  return <ChallangeList libraryBooks={libraryBooks} />;
 };
 
 const AddChallangePage = () => {
