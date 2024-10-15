@@ -18,7 +18,7 @@ const MobileNavbarMenu = () => {
       {/* Menu Mobile */}
       {openMenu && (
         <nav
-          className={`fixed left-0 top-0 !z-[51] h-dvh w-full bg-primary-50 p-5 backdrop-blur-sm md:hidden`}
+          className={`fixed left-0 top-0 !z-[51] !h-screen w-full bg-primary-70 p-5 backdrop-blur-sm md:hidden`}
         >
           <div className="mb-20 text-4xl text-primary-400">
             <MdLocalLibrary />

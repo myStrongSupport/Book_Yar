@@ -2,8 +2,8 @@ import ProgressBar from "./ProgressBar";
 import Link from "next/link";
 const Progress = ({ percentage }) => {
   return (
-    <div className="m-auto mb-10 flex md:m-0 md:mb-0">
-      <h2 className="vertical-text ml-4 text-center font-bold">
+    <div className="m-auto mb-10 flex flex-col md:m-0 md:mb-0 sm:flex-row">
+      <h2 className="sm:vertical-text sm:ml-4 sm:py-0 py-5 text-center font-bold">
         چالش کتابخوانی ماهانه
       </h2>
       {/* Show Progress Bar */}
