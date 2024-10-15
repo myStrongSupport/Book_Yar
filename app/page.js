@@ -1,14 +1,21 @@
 import Hero from "@/components/Home/Hero/Hero";
 import BookState from "@/components/BookState/BookState";
 async function getBooks() {
-  const res = await fetch(`${process.env.VERCEL_URL}/api/booksBeingRead`, {
+  const res = await fetch(`${process.env.DOMAIN_URL}/api/booksBeingRead`, {
     cache: "no-store",
   });
 
+  // Check if response is not OK
+  if (!res.ok) {
+    return []; // Return empty array or any fallback value
+  }
+
+  // Parse JSON if response is OK
   return await res.json();
 }
-
 export default async function Home() {
+  const readingBooks = await getBooks();
+
   return (
     <>
       <section className="md:h-[87dvh]">
@@ -19,7 +26,7 @@ export default async function Home() {
       {/* Book is being Read */}
       <section className="overflow-hidden py-10">
         <div className="m-auto px-1 xl:container">
-          <BookState state="کتاب های درحال مطالعه" books={[]} />
+          <BookState state="کتاب های درحال مطالعه" books={readingBooks} />
         </div>
       </section>
     </>

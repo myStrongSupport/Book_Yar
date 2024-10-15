@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import { Grid, Pagination } from "swiper/modules";
-import BookCard from "@/components/Card/BookCard";
+// import BookCard from "@/components/Card/BookCard";
 const BookSlider = ({ books, className = "mySwiper", page }) => {
   return (
     <div className="w-full md:w-[95%]">
@@ -31,7 +31,7 @@ const BookSlider = ({ books, className = "mySwiper", page }) => {
       >
         {books.map((book) => (
           <SwiperSlide key={book._id}>
-            <BookCard book={book} page={page} />
+            {/* <BookCard book={book} page={page} /> */}
           </SwiperSlide>
         ))}
       </Swiper>
