@@ -10,7 +10,7 @@ const ChallangeList = ({ libraryBooks }) => {
 
   useEffect(() => {
     setDefaultLib(true);
-  }, [books]);
+  }, [challangeBooks]);
 
   useEffect(() => {
     const fetchData = async () => {
