@@ -1,6 +1,6 @@
 "use client ";
 import Image from "next/image";
-import loadinging from "@/assets/images/loaderdata.gif";
+import loadinging from "@/assets/images/loading.gif";
 const loading = () => {
   return (
     <div
