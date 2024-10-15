@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
       >
         <MainNavbar />
         <main>{children}</main>
+        <ToastContainer />
       </body>
     </html>
   );
