@@ -9,8 +9,6 @@ async function getBooks() {
 }
 
 export default async function Home() {
-  const readingBooks = await getBooks();
-
   return (
     <>
       <section className="md:h-[87dvh]">
@@ -21,7 +19,7 @@ export default async function Home() {
       {/* Book is being Read */}
       <section className="overflow-hidden py-10">
         <div className="m-auto px-1 xl:container">
-          <BookState state="کتاب های درحال مطالعه" books={readingBooks} />
+          <BookState state="کتاب های درحال مطالعه" books={[]} />
         </div>
       </section>
     </>
