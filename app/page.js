@@ -6,10 +6,10 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const dataReadingBooks = await fetch(
-    "https://book-yar-shar.vercel.app//api/booksBeingRead"
+    "https://book-yar-shar.vercel.app/api/booksBeingRead"
   );
   const dataChallangeBooks = await fetch(
-    "https://book-yar-shar.vercel.app//api/booksBeingRead"
+    "https://book-yar-shar.vercel.app/api/booksBeingRead"
   );
   const challangeBooks = await dataChallangeBooks.json();
   const readingBooks = await dataReadingBooks.json();

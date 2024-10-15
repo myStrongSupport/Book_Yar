@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import BooksList from "@/components/BookState/BooksList/BooksList";
 
-const SearchLibrary = ({ bookLibrary, domain }) => {
+const SearchLibrary = ({ bookLibrary }) => {
   const [books, setBooks] = useState([]);
 
   const [search, setSearch] = useState("");
@@ -35,7 +35,7 @@ const SearchLibrary = ({ bookLibrary, domain }) => {
           />
         </div>
       </div>
-      <BooksList books={filteredBooks} domain={domain} />
+      <BooksList books={filteredBooks} />
     </>
   );
 };
