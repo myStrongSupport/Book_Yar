@@ -23,13 +23,13 @@ const SearchLibrary = ({ bookLibrary }) => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <h1 className="ml-4 text-5xl font-bold">کتابخانه</h1>
         {/* Input */}
         <div className="w-full border-b-2 border-primary-600 py-3">
           <input
             type="text"
-            className="font-ka w-full bg-transparent pr-4 text-primary-600 outline-none placeholder:text-gray-800"
+            className="font-ka w-full bg-transparent font-bold pr-4 text-primary-600 mt-4 md:m-0 outline-none placeholder:text-gray-800"
             placeholder="جستجو با نام کتاب و نام نویسنده"
             onChange={searchInputChangeHandler}
           />
